@@ -1,17 +1,7 @@
-1. Virtuelle Umgebung erstellen (optional)
-Falls du eine isolierte Umgebung nutzen möchtest:
+1.  Benötigte Pakete installieren
 
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate      # Windows
+pip install requests
 
-2.  Benötigte Pakete installieren
+2. Login Daten im KLARTEXT in die config.py eintragen
 
-pip install selenium webdriver-manager
-
-3. WebDriver installieren
-Falls du Chrome nutzt, installiere den ChromeDriver automatisch mit:
-
-python -m webdriver_manager.chrome
-
-4. Login Daten im KLARTEXT in die settings.py eintragen
+3. Links und Namen der gewünschten Kursen in courses.py eintragen

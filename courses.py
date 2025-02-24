@@ -8,12 +8,9 @@ my_courses = {
     "L-Mobile-Computing": "",
     "V-3D-Engine-Technology": "",
     "L-3D-Engine-Technology": "",
-    "V-Web-Technologien": "https://elearning.hs-flensburg.de/dispatch.php/course/details/index/878ed43e7280274c144a21948cd36cc7",
-    "L-Web-Technologien": "",
     "V-Mathe": "",
     "Ü-Mathe": "",
     "Grundlagen-der-IT-Security": "",
     "V-Datenbanken": "",
     "L-Datenbanken": "",
-    "Betriebswirtschaftslehre": "",
 }

@@ -2,10 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 from login import do_login
 from courses import my_courses
+from dotenv import load_dotenv
+from os import getenv
 
+
+load_dotenv()
 session = requests.Session()
-
-do_login(session)
+do_login(session, getenv("FLENS_USERNAME"), getenv("FLENS_PASSWORD"))
 
 for my_course, my_url in my_courses.items():
     print("")

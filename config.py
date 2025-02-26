@@ -1,4 +1,0 @@
-payload = {
-    "username": "",
-    "password": "",
-}

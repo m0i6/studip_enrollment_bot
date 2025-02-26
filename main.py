@@ -15,15 +15,16 @@ for my_course, my_url in my_courses.items():
     print(f"{my_course}:")
     try:
         course_response = session.get(my_url)
-        print(f"✓ Url")
+        print(f"✓ Kurs Url existiert")
         course_soup = BeautifulSoup(course_response.text, 'html.parser')
 
         enrolment_link = course_soup.find('a', {'data-dialog': 'size=big'})
         if enrolment_link:
             enrolment_url = enrolment_link['href']
-            print("✓ Link")
+            print(enrolment_url)
+            print("✓ Enrollment Url gefunden")
         else:
-            print("✗ Link")
+            print("✗ Enrollment Url nicht gefunden")
 
         if enrolment_url:
             security_token = course_soup.find('input', {'name': 'security_token'})['value']
@@ -42,7 +43,7 @@ for my_course, my_url in my_courses.items():
                 if time_out_message in page_text:
                     print("✗ Fehler: außerhalb des Anmeldezeitraums")
                 else:
-                    print("✓ Anmeldung erfolgreich")
+                    print("✓ Anmeldung erfolgreich!!")
             else:
                 print("✗ Fehler: Netzwerkfehler")
         else:

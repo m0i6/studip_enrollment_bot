@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
-from config import payload
 
-def do_login(session):
+def do_login(session, username, password):
     
     login_url = "https://elearning.hs-flensburg.de/index.php?login=1"
     response = session.get(login_url)
@@ -15,8 +14,8 @@ def do_login(session):
 
     # create POST-data
     login_data = {
-        'loginname': payload['username'],
-        'password': payload['password'],
+        'loginname': username,
+        'password': password,
         'security_token': security_token,
         'login_ticket': login_ticket,
         'resolution': resolution

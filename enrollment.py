@@ -6,22 +6,22 @@ def enroll_in(session, url):
     course_soup = BeautifulSoup(course_response.text, 'html.parser')
 
     # get enrollment url
-    enrolment_link = course_soup.find('a', {'data-dialog': 'size=big'})
-    if enrolment_link:
-        enrolment_url = enrolment_link['href']
+    enrollment_link = course_soup.find('a', {'data-dialog': 'size=big'})
+    if enrollment_link:
+        enrollment_url = enrollment_link['href']
         print("✓ Enrollment Url gefunden")
     else:
         print("✗ Enrollment Url nicht gefunden")
 
     # enroll
-    if enrolment_url:
+    if enrollment_url:
         security_token = course_soup.find('input', {'name': 'security_token'})['value']
-        enrolment_data = {'security_token': security_token, 'apply': '1'}
-        enrolment_response = session.post(enrolment_url, data=enrolment_data)
+        enrollment_data = {'security_token': security_token, 'apply': '1'}
+        enrollment_response = session.post(enrollment_url, data=enrollment_data)
 
         # check for success
-        if enrolment_response.status_code == 200:
-            soup = BeautifulSoup(enrolment_response.text, 'html.parser')
+        if enrollment_response.status_code == 200:
+            soup = BeautifulSoup(enrollment_response.text, 'html.parser')
             page_text = soup.get_text()
             time_out_message = "nicht innerhalb des Anmeldezeitraums"
             if time_out_message in page_text:
@@ -48,13 +48,14 @@ def group_enroll_in(session, course, url):
             url_from_a_tag = a_tag.get('href')
             group_enrollment_urls.append(url_from_a_tag)
 
-        group_enrollment_url = group_enrollment_urls[course.group_number - 1]
-
+    group_enrollment_url = group_enrollment_urls[course.group_number - 1]
+    
+    # enroll
     if group_enrollment_url:
-        enrolment_response = session.post(group_enrollment_url)
+        enrollment_response = session.post(group_enrollment_url)
 
         # check for success
-        if enrolment_response.status_code == 200:
+        if enrollment_response.status_code == 200:
             print("✓ Anmeldung erfolgreich!!")
         else:
             print("✗ Fehler: Netzwerkfehler")

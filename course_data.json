@@ -1,0 +1,23 @@
+[
+    {
+        "name": "Software Engineering",
+        "url_v": "",
+        "url_l": "",
+        "enrollment_in_groups": false,
+        "group_number": 0
+    },
+    {
+        "name": "Theoretische Informatik",
+        "url_v": "https://elearning.hs-flensburg.de/dispatch.php/course/details/index/14bc021c02a7db4d13e006c28494fbed",
+        "url_l": "https://elearning.hs-flensburg.de/dispatch.php/course/details/index/13fd1e6cbe0c6227d2751b482756a4c7",
+        "enrollment_in_groups": false,
+        "group_number": 0
+    },
+    {
+        "name": "IID Test",
+        "url_v": "",
+        "url_l": "https://elearning.hs-flensburg.de/dispatch.php/course/statusgroups?cid=33eea4084e102559b03e312185e7ce5e",
+        "enrollment_in_groups": true,
+        "group_number": 1
+    }
+]

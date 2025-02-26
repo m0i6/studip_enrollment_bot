@@ -17,7 +17,7 @@ FLENS_PASSWORD=pass
 
 #### Anleitung zum Ausfüllen der `course_data.json`
 
-Die JSON-Datei enthält eine Liste von Kursen. Jeder Kurs sollte als Objekt hinzugefügt werden. Du kannst beliebig viele Kurse hinzufügen, indem du das Objekt für jeden Kurs duplizierst und die entsprechenden Parameter anpasst.
+Die Datei enthält eine Liste von Kursen, die beliebig bearbeitet und erweitert werden kann.
 
 Die Parameter, die du für jeden Kurs ausfüllen musst, sind:
 - **`name`**: Der Name des Kurses (dient nur der Bezeichnung)

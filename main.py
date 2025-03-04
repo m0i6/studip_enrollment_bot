@@ -14,8 +14,9 @@ for my_course in my_courses:
     print(f"{my_course.name}:")
     try:
         # Vorlesungsanmeldung
-        print("Vorlesung:")
-        enroll_in(session, my_course.url_v)
+        if (my_course.url_v != ""):
+            print("Vorlesung:")
+            enroll_in(session, my_course.url_v)
 
     except requests.exceptions.RequestException as e:
         print(f"✗ Vorlesungs Url fehlerhaft")
@@ -29,8 +30,9 @@ for my_course in my_courses:
             print("Gruppe:")
             group_enroll_in(session, my_course, my_course.url_l)
         else:
-            print("Labor:")
-            enroll_in(session, my_course.url_l)
+            if (my_course.url_l != ""):
+                print("Labor:")
+                enroll_in(session, my_course.url_l)
 
     except requests.exceptions.RequestException as e:
         print(f"✗ Labor Url fehlerhaft")
